@@ -29,15 +29,11 @@
   display: flex;
   justify-content: space-between;
   background: linear-gradient(
-    0deg,
-    rgba(81, 113, 108, 1) 1%,
-    rgba(66, 101, 96, 1) 24%,
-    rgba(98, 126, 121, 1) 43%,
-    rgba(114, 138, 133, 1) 60%,
-    rgba(145, 162, 157, 1) 75%,
-    rgba(188, 197, 190, 1) 89%,
-    rgba(252, 248, 240, 1) 100%
+    180deg,
+    rgba(38, 83, 76, 1) 0%,
+    rgba(235, 250, 243, 1) 100%
   );
+
   padding: 5px 10px;
 }
 
@@ -53,6 +49,10 @@
 .container header .logo:hover {
   transform: scale(1.01);
   opacity: 80%;
+}
+
+.container header .logo a {
+  display: flex;
 }
 
 .container header .logo img {
@@ -71,6 +71,13 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: 0.3s;
+  min-width: 50px;
+}
+
+.container header ul li:hover {
+  color: #426560;
+  font-weight: bold;
 }
 
 .container header ul li:nth-last-child(1) {
@@ -79,6 +86,15 @@
   cursor: pointer;
   padding: 0 8px;
   margin: 0;
+  min-width: 75px;
+}
+
+.container header ul li:nth-last-child(1) path {
+  transition: 0.3s;
+}
+
+.container header ul li:nth-last-child(1):hover path {
+  fill: #426560;
 }
 
 /* ======================================================================= */
@@ -223,11 +239,13 @@
   .container header ul li {
     margin: 0 15px;
     font-size: 16px;
+    min-width: 70px;
   }
 
   .container header ul li:nth-last-child(1) {
     padding: 0 15px;
     margin: 0;
+    min-width: 125px;
   }
 
   .container header ul li:nth-last-child(1) svg {
