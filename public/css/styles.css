@@ -83,11 +83,34 @@
 
 /* ======================================================================= */
 
+.container .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 80px auto;
+  width: 600px;
+  max-width: 90%;
+}
+
+.container .content h2 {
+  color: #426560;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.container .content p {
+  color: #426560;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
 .container .button {
   width: fit-content;
-  padding: 14px 50px;
-  font-size: 15px;
-  margin: 150px auto;
+  padding: 12px 30px;
+  font-size: 13px;
   background-color: rgb(66 101 96 / 50%);
   text-align: center;
   border-radius: 10px;
@@ -96,6 +119,88 @@
 }
 
 .container .button:hover {
+  background-color: rgb(66 101 96 / 100%);
+  transform: scale(1.02);
+}
+
+/* ======================================================================= */
+
+.boxes {
+  display: none;
+  width: 750px;
+  max-width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  justify-content: center;
+  background-color: #c2dfd1;
+  color: #426560 !important;
+  padding: 10px;
+  border-radius: 30px;
+  box-shadow: 11px 11px 20px 0px #00000047, -11px -9px 16px -10px #00000029;
+}
+
+.boxes .box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 10px;
+}
+
+.boxes .box:nth-child(2) {
+  border-top: 2px solid #829b97;
+}
+
+.boxes .box .topic {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.boxes .box .inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.boxes .box .inputs > div {
+  position: relative;
+}
+
+.boxes .box .inputs > div svg {
+  position: absolute;
+  width: 20px;
+  top: -11px;
+  left: 10px;
+}
+
+.boxes .box .inputs input {
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  width: 100%;
+  padding-left: 40px;
+}
+
+.boxes .box .inputs input:focus {
+  outline: none;
+}
+
+.boxes .box .button {
+  width: fit-content;
+  padding: 10px 30px;
+  font-size: 16px;
+  margin: 10px 0 0 0;
+  background-color: rgb(66 101 96 / 50%);
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #fcf8f0;
+}
+
+.boxes .box .button:hover {
   background-color: rgb(66 101 96 / 100%);
   transform: scale(1.02);
 }
@@ -132,10 +237,107 @@
 
   /* ======================================================================= */
 
-  .container .button {
+  .container .content {
+    gap: 20px;
+    margin: 100px auto;
+  }
+
+  .container .content h2 {
+    font-size: 40px;
+  }
+
+  .container .content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  .container .content .button {
     padding: 14px 60px;
     font-size: 20px;
-    margin: 300px auto;
+  }
+
+  /* ======================================================================= */
+
+  .boxes {
+    display: none;
+    width: 750px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    flex-direction: row;
+    background-color: #c2dfd1;
+    color: #426560 !important;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 11px 11px 20px 0px #00000047, -11px -9px 16px -10px #00000029;
+  }
+
+  .boxes .box {
+    width: inherit;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 10px;
+  }
+
+  .boxes .box:nth-child(2) {
+    border-left: 2px solid #829b97;
+    border-top: none;
+  }
+
+  .boxes .box .topic {
+    margin-bottom: 40px;
+    font-size: 30px;
+  }
+
+  .boxes .box .inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .boxes .box .inputs > div {
+    position: relative;
+  }
+
+  .boxes .box .inputs > div svg {
+    position: absolute;
+    width: 20px;
+    top: -11px;
+    left: 10px;
+  }
+
+  .boxes .box .inputs input {
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 100%;
+    padding-left: 40px;
+  }
+
+  .boxes .box .inputs input:focus {
+    outline: none;
+  }
+
+  .boxes .box .button {
+    width: fit-content;
+    padding: 10px 30px;
+    font-size: 16px;
+    margin: 50px;
+    background-color: rgb(66 101 96 / 50%);
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #fcf8f0;
+  }
+
+  .boxes .box .button:hover {
+    background-color: rgb(66 101 96 / 100%);
+    transform: scale(1.02);
   }
 }
 
@@ -152,9 +354,9 @@
   }
 
   .container .one {
-    bottom: -100px;
-    right: -100px;
-    width: 600px;
+    bottom: -400px;
+    right: -200px;
+    width: 1000px;
   }
 
   .container .two {
@@ -194,10 +396,20 @@
 
   /* ======================================================================= */
 
-  .container .button {
+  .container .content {
+    align-items: start;
+    margin: 130px 80px;
+    z-index: 1;
+    position: relative;
+  }
+
+  .container .content p {
+    text-align: start;
+  }
+
+  .container .content .button {
     padding: 16px 70px;
     font-size: 22px;
-    margin: 250px 350px;
   }
 
   /* ======================================================================= */
@@ -224,10 +436,6 @@
     align-items: center;
     flex-direction: column;
     padding: 50px 10px;
-  }
-
-  .boxes .box:nth-child(2) {
-    border-left: 2px solid #829b97;
   }
 
   .boxes .box:nth-child(2) {
