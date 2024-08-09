@@ -31,7 +31,7 @@ loginForm.addEventListener("click", (e) => {
       loginInputs.children[0].children[1].value != "" &&
       loginInputs.children[1].children[1].value != ""
     ) {
-      window.location = "../../src/home.html";
+      window.location = "../../home.html";
       /*
       num++;
       addToArray(
@@ -52,7 +52,7 @@ signUpForm.addEventListener("click", (e) => {
       signUpInputs.children[2].children[1].value != "" &&
       signUpInputs.children[3].children[1].value != ""
     ) {
-      window.location = "../../src/home.html";
+      window.location = "../../home.html";
       /*
       num++;
       addToArray(

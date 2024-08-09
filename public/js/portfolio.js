@@ -24,12 +24,12 @@ menu.addEventListener("click", () => {
 
 nav.addEventListener("click", (e) => {
   if (e.target == home) {
-    window.location = "../../src/home.html";
+    window.location = "../../home.html";
   } else if (e.target == categories) {
-    window.location = "../../src/categories.html";
+    window.location = "../../categories.html";
   } else if (e.target == portfolio) {
-    window.location = "../../src/portfolio.html";
+    window.location = "../../portfolio.html";
   } else if (e.target == contact) {
-    window.location = "../../src/contact.html";
+    window.location = "../../contact.html";
   }
 });
