@@ -3,6 +3,10 @@ const menu = document.querySelector(".menu");
 const open = document.querySelector("#open");
 const close = document.querySelector("#close");
 const nav = document.querySelector("ul");
+const home = document.querySelector("ul li.home");
+const categories = document.querySelector("ul li.categories");
+const portfolio = document.querySelector("ul li.portfolio");
+const contact = document.querySelector("ul li.contact-us");
 
 menu.addEventListener("click", () => {
   if (check.hasAttribute("checked")) {
@@ -15,5 +19,17 @@ menu.addEventListener("click", () => {
     nav.style.display = "none";
     open.style.display = "block";
     close.style.display = "none";
+  }
+});
+
+nav.addEventListener("click", (e) => {
+  if (e.target == home) {
+    window.location = "../../src/home.html";
+  } else if (e.target == categories) {
+    window.location = "../../src/categories.html";
+  } else if (e.target == portfolio) {
+    window.location = "../../src/portfolio.html";
+  } else if (e.target == contact) {
+    window.location = "../../src/contact.html";
   }
 });

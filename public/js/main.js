@@ -6,11 +6,11 @@ const loginInputs = document.querySelector(".login .inputs");
 const signUpForm = document.querySelector(".sign-up");
 const signUpInputs = document.querySelector(".sign-up .inputs");
 
-let arr = [];
+// let arr = [];
 
-if (localStorage.getItem("notes")) {
-  arr = JSON.parse(localStorage.getItem("notes"));
-}
+// if (localStorage.getItem("notes")) {
+//   arr = JSON.parse(localStorage.getItem("notes"));
+// }
 
 container.addEventListener("click", (e) => {
   if (e.target == button) {
@@ -43,8 +43,6 @@ loginForm.addEventListener("click", (e) => {
     }
   }
 });
-
-console.log(signUpInputs.children[0]);
 
 signUpForm.addEventListener("click", (e) => {
   if (e.target.classList.contains("button")) {

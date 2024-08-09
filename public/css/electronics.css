@@ -1,0 +1,352 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Source Sans 3", sans-serif;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  color: #fcf8f0;
+}
+
+.container {
+  min-height: calc(100vh - 60px);
+  padding: 10px 20px;
+  background-image: url(../images/bg1.png);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 10px solid #426560;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* ======================================================================= */
+header {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(38, 83, 76, 1) 0%,
+    rgba(235, 250, 243, 1) 100%
+  );
+  padding: 5px 10px;
+  position: relative;
+}
+
+header .logo {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+header .logo:hover {
+  transform: scale(1.01);
+  opacity: 80%;
+}
+
+header .logo a {
+  display: flex;
+}
+
+header .logo img {
+  width: 110px;
+}
+
+header .menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+header ul {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 0px;
+  top: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(235, 250, 243, 1) 0%,
+    rgba(87, 125, 118, 1) 25%,
+    rgba(38, 83, 76, 1) 100%
+  );
+
+  width: 100%;
+  z-index: 2;
+}
+
+header ul li {
+  width: 100%;
+  padding: 15px 10px;
+  border-bottom: 1px solid #fcf8f0;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+header ul li:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(66, 101, 96, 1) 75%,
+    rgba(252, 248, 240, 1) 100%
+  );
+}
+
+li.active {
+  background: linear-gradient(
+    180deg,
+    rgba(66, 101, 96, 1) 75%,
+    rgba(252, 248, 240, 1) 100%
+  );
+}
+
+header svg#open {
+  display: block;
+}
+
+header svg#close {
+  display: none;
+}
+
+/* ======================================================================= */
+
+.container .search {
+  position: relative;
+  width: 80%;
+  max-width: 700px;
+  margin: 80px 0;
+  display: flex;
+  align-items: center;
+}
+
+.container .search svg {
+  position: absolute;
+  left: 10px;
+}
+
+.container .search input {
+  width: 100%;
+  padding: 13px 45px;
+  font-size: 18px;
+  border: none;
+  background-color: #42656080;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 4px 6px 20px #00000047, inset 9px 7px 4px -5px #ffffff6e,
+    inset -9px -7px 4px -5px #0000004d;
+}
+
+.container input:focus {
+  outline: none;
+  box-shadow: 4px 6px 20px #00000047, inset 9px 7px 4px -5px #0000004d,
+    inset -9px -7px 4px -5px #ffffff6e;
+}
+
+::placeholder {
+  color: white;
+}
+
+/* ======================================================================= */
+
+.container .tips {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.container .tips .topic {
+  position: relative;
+}
+
+.container .tips .topic svg {
+  border-radius: 50%;
+  border: 3px solid #426560;
+  position: absolute;
+  top: 0;
+  left: 15px;
+  cursor: pointer;
+  box-shadow: 4px 6px 20px #00000047, inset 9px 7px 4px -5px #ffffff6e,
+    inset -9px -7px 4px -5px #0000004d;
+  z-index: 1;
+  transition: 0.3s;
+}
+
+.container .tips .topic svg:hover {
+  box-shadow: 4px 6px 20px #00000047, inset 9px 7px 4px -5px #0000004d,
+    inset -9px -7px 4px -5px #ffffff6e;
+}
+
+.container .tips .topic h1 {
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.container .tips h1::after {
+  content: "";
+  width: 80px;
+  height: 2.5px;
+  background-color: #426560;
+  position: absolute;
+  bottom: -5px;
+  right: 50%;
+  transform: translateX(50%);
+  border-radius: 5px;
+}
+
+.container .tips .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: #fcf8f0;
+  padding: 10px 0;
+  max-width: 1000px;
+}
+
+.container .tips .cards .card {
+  padding: 20px;
+  background-color: #426560;
+  box-shadow: 4px 6px 20px #00000047, inset 9px 7px 4px -5px #ffffff6e,
+    inset -9px -7px 4px -5px #0000004d;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 160px;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+.container .tips .cards .card:hover {
+  box-shadow: 4px 6px 20px #00000047, inset 9px 7px 4px -5px #0000004d,
+    inset -9px -7px 4px -5px #ffffff6e;
+  opacity: 0.9;
+}
+
+.container .tips .cards .card .image {
+  margin-bottom: 10px;
+}
+
+.container .tips .cards .card .image svg {
+  height: 75px;
+}
+
+.container .tips .cards .card h3 {
+  font-weight: 600;
+}
+
+/* ======================================================================= */
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 30px;
+    min-height: calc(100vh - 70px);
+  }
+
+  header {
+    height: 70px;
+    padding: 10px;
+  }
+
+  header .logo img {
+    width: 150px;
+  }
+
+  header ul {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    position: inherit;
+    flex-direction: row;
+    background: none;
+    width: fit-content;
+    top: 0;
+  }
+
+  header ul li {
+    margin: 0 30px;
+    font-size: 16px;
+    padding: 0;
+    border: none;
+    min-width: 75px;
+    display: flex;
+    justify-content: center;
+  }
+
+  header ul li:hover {
+    background: none;
+    color: #426560;
+    font-weight: bold;
+  }
+
+  li.active {
+    background: none;
+    color: #426560;
+    font-weight: bold;
+  }
+
+  header svg#open {
+    display: none;
+  }
+
+  header svg#close {
+    display: none;
+  }
+
+  /* ======================================================================= */
+
+  .container .tips {
+    margin: 100px 0;
+  }
+}
+
+/* ======================================================================= */
+
+@media (min-width: 992px) {
+  .container {
+    min-height: calc(100vh - 80px);
+  }
+
+  /* ======================================================================= */
+
+  header {
+    height: 80px;
+    padding: 10px 15px;
+  }
+
+  header .logo img {
+    width: 160px;
+  }
+
+  header ul li {
+    font-size: 18px;
+    min-width: 85px;
+  }
+
+  /* ======================================================================= */
+
+  .container .tips .cards {
+    gap: 40px;
+  }
+}
+
+/* ======================================================================= */
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 60px;
+  }
+}
