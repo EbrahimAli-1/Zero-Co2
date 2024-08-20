@@ -23,3 +23,8 @@ const back = document.querySelector(".back");
 back.addEventListener("click", () => {
   history.back();
 });
+
+const logOut = document.querySelector(".log-out");
+logOut.addEventListener("click", () => {
+  window.location = "../../index.html";
+});

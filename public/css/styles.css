@@ -13,6 +13,10 @@ body {
   color: #fcf8f0;
 }
 
+img {
+  user-select: none;
+}
+
 .container {
   display: flex;
   flex-direction: column;

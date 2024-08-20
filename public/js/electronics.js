@@ -9,6 +9,7 @@ const portfolio = document.querySelector("ul li.portfolio");
 const contact = document.querySelector("ul li.contact-us");
 const back = document.querySelector(".topic svg");
 const details = document.querySelector(".cards .laptop");
+const logOut = document.querySelector(".log-out");
 
 menu.addEventListener("click", () => {
   if (check.hasAttribute("checked")) {
@@ -42,4 +43,8 @@ back.addEventListener("click", () => {
 
 details.addEventListener("click", () => {
   window.location = "../../details.html";
+});
+
+logOut.addEventListener("click", () => {
+  window.location = "../../index.html";
 });

@@ -13,6 +13,10 @@ body {
   color: #fcf8f0;
 }
 
+img {
+  user-select: none;
+}
+
 .container {
   min-height: calc(100vh - 60px);
   padding: 10px 20px;
@@ -23,6 +27,26 @@ body {
   border-bottom: 10px solid #426560;
   box-sizing: border-box;
   position: relative;
+}
+
+.container .log-out {
+  border-radius: 50%;
+  border: 2px solid #426560;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  box-shadow: 4px 6px 20px #00000047, inset 9px 7px 4px -5px #ffffff6e,
+    inset -9px -7px 4px -5px #0000004d;
+  padding: 4px;
+  transition: 0.3s;
+  width: 42px;
+  height: 42px;
+}
+
+.container .log-out:hover {
+  box-shadow: 4px 6px 20px #00000047, inset 9px 7px 4px -5px #0000004d,
+    inset -9px -7px 4px -5px #ffffff6e;
 }
 
 /* ======================================================================= */
@@ -96,7 +120,7 @@ header ul li {
   display: flex;
   align-items: center;
   cursor: pointer;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 header ul li:hover {
@@ -234,6 +258,14 @@ header svg#close {
     min-height: calc(100vh - 70px);
   }
 
+  .container .log-out {
+    top: 15px;
+    right: 25px;
+    padding: 7px;
+    width: 52px;
+    height: 52px;
+  }
+
   header {
     height: 70px;
     padding: 10px;
@@ -292,6 +324,14 @@ header svg#close {
     min-height: calc(100vh - 80px);
   }
 
+  .container .log-out {
+    top: 15px;
+    right: 40px;
+    padding: 8px;
+    width: 58px;
+    height: 58px;
+  }
+
   /* ======================================================================= */
 
   header {
@@ -316,5 +356,13 @@ header svg#close {
 @media (min-width: 1200px) {
   .container {
     padding: 0 60px;
+  }
+
+  .container .log-out {
+    top: 15px;
+    right: 75px;
+    padding: 8px;
+    width: 64px;
+    height: 64px;
   }
 }

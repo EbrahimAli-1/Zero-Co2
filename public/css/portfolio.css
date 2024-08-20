@@ -13,6 +13,10 @@ body {
   color: #fcf8f0;
 }
 
+img {
+  user-select: none;
+}
+
 .container {
   min-height: calc(100vh - 60px);
   padding: 10px 35px;
@@ -96,7 +100,7 @@ header ul li {
   display: flex;
   align-items: center;
   cursor: pointer;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 header ul li:hover {
@@ -125,42 +129,47 @@ header svg#close {
 
 /* ======================================================================= */
 
-.container .tips {
-  margin: 30px 0;
-  /* width: 90%;
-  max-width: 1000px; */
-}
-
-.container .tips .topic {
-  text-align: center;
-
+.container .data {
+  max-width: 100%;
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
+  margin: 40px 0;
 }
 
-.container .tips .topic svg {
+.container .data .log-out {
   border-radius: 50%;
-  border: 3px solid #426560;
+  border: 2px solid #426560;
   position: absolute;
-  top: 0;
-  left: 15px;
+  top: 10px;
+  right: 15px;
   cursor: pointer;
   box-shadow: 4px 6px 20px #00000047, inset 9px 7px 4px -5px #ffffff6e,
     inset -9px -7px 4px -5px #0000004d;
-  z-index: 1;
+  padding: 4px;
   transition: 0.3s;
+  width: 42px;
+  height: 42px;
 }
 
-.container .tips .topic svg:hover {
+.container .data .log-out:hover {
   box-shadow: 4px 6px 20px #00000047, inset 9px 7px 4px -5px #0000004d,
     inset -9px -7px 4px -5px #ffffff6e;
 }
 
-.container .tips .topic > h1 {
+.container .details {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.container .details > h1 {
   margin-bottom: 50px;
   position: relative;
 }
 
-.container .tips .topic > h1::after {
+.container .details > h1::after {
   content: "";
   width: 80px;
   height: 2.5px;
@@ -172,106 +181,67 @@ header svg#close {
   border-radius: 5px;
 }
 
-.container .tips .details {
+.container .details .image {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  width: 225px;
+  height: 225px;
+  overflow: hidden;
+  border-radius: 75px;
+}
+
+.container .details .image img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  position: relative;
+  top: -25px;
+}
+
+.container .details .name {
+  font-size: 34px;
+  font-weight: 600;
   color: #426560;
-  padding: 10px 0;
+  margin: 20px 0;
 }
 
-.container .tips .details .content {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
+.container .content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100px 100px;
+  gap: 30px;
+  align-items: center;
   justify-content: center;
+  justify-items: center;
 }
 
-.container .tips .details .image {
+.container .content .box {
   display: flex;
-  justify-content: center;
-}
-
-.container .tips .details .image img {
-  width: 400px;
-  max-width: 100%;
-  border-radius: 20px;
+  justify-content: start;
+  width: 80px;
+  height: 80px;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 20px;
+  background-color: rgb(66 101 96 / 50%);
   box-shadow: 4px 6px 20px #00000047, inset 9px 7px 4px -5px #ffffff6e,
     inset -9px -7px 4px -5px #0000004d;
+  border-radius: 20px;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
-.container .tips .details .content .instructions,
-.container .tips .details .notes {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
+.container .content h2 {
+  display: none;
 }
 
-.container .tips .details .notes {
-  margin-top: 30px;
+.container .content .box:hover {
+  background-color: rgb(66 101 96 / 100%);
 }
 
-.container .tips .details .content .instructions h1,
-.container .tips .details .notes h1 {
-  font-size: 28px;
-  text-decoration: underline;
-}
-
-.container .tips .details .content .instructions .boxes {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.container .tips .details .content .instructions .boxes .box,
-.container .tips .details .notes .box {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  padding: 20px;
-  width: 225px;
-}
-
-.container .tips .details .notes .box {
-  width: 100%;
-  max-width: 550px;
-}
-
-.container .tips .details .content .instructions .boxes .box h3,
-.container .tips .details .notes .box h3 {
-  margin-bottom: 5px;
-  margin-left: -10px;
-  font-size: 22px;
-  font-weight: 600;
-}
-
-.container .tips .details .content .instructions .boxes .box ul,
-.container .tips .details .notes .box ul {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  align-items: start;
-}
-
-.container .tips .details .content .instructions .boxes .box ul li,
-.container .tips .details .notes .box ul li {
-  margin-left: 25px;
-  position: relative;
-  font-size: 18px;
-}
-
-.container .tips .details .content .instructions .boxes .box ul li svg,
-.container .tips .details .notes .box ul li svg {
-  position: absolute;
-  top: -80%;
-  left: -32px;
-  width: 40px;
-}
-
-.container .tips .details .content .instructions .boxes .box ul li svg.diff {
-  top: -40%;
-}
-
-.container .tips .details .notes .box ul li svg.diff {
-  top: -28%;
+.container .content .box svg path {
+  fill: #fcf8f0;
+  stroke: none;
 }
 
 /* ======================================================================= */
@@ -280,6 +250,14 @@ header svg#close {
   .container {
     padding: 0 30px;
     min-height: calc(100vh - 70px);
+  }
+
+  .container .data .log-out {
+    top: 15px;
+    right: 25px;
+    padding: 7px;
+    width: 52px;
+    height: 52px;
   }
 
   header {
@@ -334,50 +312,26 @@ header svg#close {
 
   /* ======================================================================= */
 
-  .container .tips {
-    margin: 60px 0;
+  .container .details {
+    margin-bottom: 60px;
   }
 
-  /* ======================================================================= */
-
-  .container .tips .details {
+  .container .content {
+    max-width: 750px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 30px;
   }
 
-  .container .tips .details .content {
-    flex-direction: row;
+  .container .content .box {
+    width: 100%;
+    height: 100%;
   }
 
-  .container .tips .details .content .instructions .boxes {
-    flex-direction: column;
+  .container .content .box h2 {
+    display: block;
   }
 
-  .container .tips .details .content .instructions .boxes .box {
-    width: 235px;
-  }
-
-  .container .tips .details .notes {
-    margin: 30px auto 0;
-  }
-
-  .container .tips .details .image img {
-    max-width: fit-content;
-  }
-
-  .container .tips .details .content .instructions .boxes .box ul li,
-  .container .tips .details .notes .box ul li {
-    font-size: 19px;
-  }
-
-  .container .tips .details .content .instructions .boxes .box ul li svg,
-  .container .tips .details .notes .box ul li svg {
-    top: -70%;
-  }
-
-  .container .tips .details .content .instructions .boxes .box ul li svg.diff,
-  .container .tips .details .notes .box ul li svg.diff {
-    top: -35%;
-  }
+  /* ======================================================================= */
 }
 
 /* ======================================================================= */
@@ -385,6 +339,20 @@ header svg#close {
 @media (min-width: 992px) {
   .container {
     min-height: calc(100vh - 80px);
+  }
+
+  .container .data .log-out {
+    top: 15px;
+    right: 40px;
+    padding: 8px;
+    width: 58px;
+    height: 58px;
+  }
+
+  .container .content {
+    max-width: 1000px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 40px;
   }
 
   /* ======================================================================= */
@@ -404,10 +372,6 @@ header svg#close {
   }
 
   /* ======================================================================= */
-
-  .container .tips .cards {
-    gap: 40px;
-  }
 }
 
 /* ======================================================================= */
@@ -417,21 +381,18 @@ header svg#close {
     padding: 0 45px;
   }
 
+  .container .data .log-out {
+    top: 15px;
+    right: 75px;
+    padding: 8px;
+    width: 64px;
+    height: 64px;
+  }
+
+  .container .content {
+    max-width: 1200px;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  }
+
   /* ======================================================================= */
-
-  .container .tips .details .image img {
-    width: 360px;
-  }
-
-  .container .tips .details .content {
-    gap: 30px;
-  }
-
-  .container .tips .details .content .instructions .boxes {
-    flex-direction: row;
-  }
-
-  .container .tips .details .notes {
-    margin: -260px 0 0 390px;
-  }
 }

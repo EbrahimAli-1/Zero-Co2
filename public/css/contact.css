@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+img {
+  user-select: none;
+}
+
 body {
   color: #fcf8f0;
 }

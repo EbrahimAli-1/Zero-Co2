@@ -8,6 +8,7 @@ const categories = document.querySelector("ul li.categories");
 const portfolio = document.querySelector("ul li.portfolio");
 const contact = document.querySelector("ul li.contact-us");
 const electro = document.querySelector(".electronics");
+const logOut = document.querySelector(".log-out");
 
 menu.addEventListener("click", () => {
   if (check.hasAttribute("checked")) {
@@ -37,4 +38,8 @@ nav.addEventListener("click", (e) => {
 
 electro.addEventListener("click", () => {
   window.location = "../../electronics.html";
+});
+
+logOut.addEventListener("click", () => {
+  window.location = "../../index.html";
 });

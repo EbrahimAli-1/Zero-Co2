@@ -7,6 +7,7 @@ const home = document.querySelector("ul li.home");
 const categories = document.querySelector("ul li.categories");
 const portfolio = document.querySelector("ul li.portfolio");
 const contact = document.querySelector("ul li.contact-us");
+const logOut = document.querySelector(".log-out");
 
 menu.addEventListener("click", () => {
   if (check.hasAttribute("checked")) {
@@ -32,4 +33,8 @@ nav.addEventListener("click", (e) => {
   } else if (e.target == contact) {
     window.location = "../../contact.html";
   }
+});
+
+logOut.addEventListener("click", () => {
+  window.location = "../../index.html";
 });
